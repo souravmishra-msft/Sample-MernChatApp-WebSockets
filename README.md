@@ -10,5 +10,5 @@ This sample demonstrates the working of a real-time chat app using websockets. T
 - Run the client application using the command `npm start`
 
 ### Note:
-1: The server application is an Express Nodejs server running on port 3001 (http://localhost:3001).
-2: The client application is a ReactJS app running on port 3000 (http://localhost:3000).
+1. The server application is an Express Nodejs server running on port 3001 (http://localhost:3001).
+2. The client application is a ReactJS app running on port 3000 (http://localhost:3000).
