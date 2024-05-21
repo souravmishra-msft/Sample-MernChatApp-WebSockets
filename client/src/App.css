@@ -1,0 +1,57 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+}
+
+.messageSend-Box {
+  margin: 20px;
+  text-align: center;
+  display: flex;
+  gap: 10px
+}
+
+.messageDisplay-Box {
+  margin: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.messageDisplay-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(80, 80, 80);
+  border-radius: 5px;
+  overflow-y: auto; /* Allow scrolling if the content exceeds the container height */
+}
+
+
+.messageReceived {
+  background-color: lightblue;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  align-self: flex-start; 
+  text-align: left;
+}
+
+.messageSent {
+  background-color: lightgreen;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  align-self: flex-end; 
+  text-align: right;
+}
+
+.messageSender {
+  color: grey;
+  font-size: 12px;
+  text-align: right;
+}
+
+
+
