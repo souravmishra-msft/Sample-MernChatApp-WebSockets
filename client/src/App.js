@@ -47,6 +47,8 @@ function App() {
       alert(`Disconnected: ${reason}`);
     });
 
+
+
     // Cleanup the event listener when the component unmounts
     return () => {
       socket.off("receive_message");
@@ -67,7 +69,7 @@ function App() {
         <h2>Message:</h2>
         <div className="messageDisplay-container">
           {messages.map((msg, index) => (
-            <div className={msg.type === "received" ? "messageReceived" : "messageSent"}>
+            <div key={index} className={msg.type === "received" ? "messageReceived" : "messageSent"}>
               <p>{msg.text}</p>
               <p className="messageSender">{msg.type === "received" ? `Received from: ${msg.id}` : `Sent to: ${msg.id}`}</p>
             </div>
