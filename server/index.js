@@ -31,15 +31,24 @@ io.on("connection", (socket) => {
     socket.on("send_message", (data) => {
         console.log(data);
         /** send the data to the frontend */
-        io.emit("receive_message", { message: data.message, id: socket.id });
+        socket.broadcast.emit("receive_message", { message: data.message, id: socket.id });
     });
 
     // Handle disconnection
-    socket.on("disconnect", () => {
-        console.log(`User Disconnected: ${socket.id}`);
+    socket.on("disconnect", (reason) => {
+        console.log(`User Disconnected: ${socket.id} - Reason: ${reason}`);
         // Remove the socket connection from the stored list
         delete connectedClients[socket.id];
     });
+
+    // Handle connection errors and timeouts
+    socket.on("connect_error", (error) => {
+        console.log(`Connection Error: ${error.message}`);
+    });
+
+    socket.on("connect_timeout", () => {
+        console.log(`Connection Timeout for: ${socket.id}`);
+    })
 });
 
 server.listen(3001, () => {
